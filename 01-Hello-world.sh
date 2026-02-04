@@ -1,4 +1,7 @@
 #!/bin/bash 
 
-echo "hell world"
+echo "hello world"
 
+echo "its working"
+
+echo " bye"
