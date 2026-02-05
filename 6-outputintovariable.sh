@@ -2,7 +2,7 @@
 
 START_TIME=$(date +%s) 
 
-ech0o "Script executed at :$START_TIME"
+echo "Script executed at :$START_TIME"
 
 sleep 10
 
