@@ -6,7 +6,7 @@
 
 
     if [ $USERID -ne 0 ]; then
-        echo "Try with root user" | tee $LOGS_FILES
+        echo "Try with root user" | tee -a $LOGS_FILES
         exit 1
     fi
 
@@ -14,10 +14,10 @@
 
     VALIDATE(){
     if [ $1 -ne 0 ]; then
-        echo " $2 is failure" | tee $LOGS_FILES
+        echo " $2 is failure" | tee -a $LOGS_FILES
         exit 1
     else 
-        echo " $2 is success" | tee $LOGS_FILES
+        echo " $2 is success" | tee -a $LOGS_FILES
     fi
 
     }
