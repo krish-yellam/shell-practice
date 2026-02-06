@@ -18,24 +18,22 @@ else
 
 fi
 
-if
 
     echo "installing MYSQL"
     dnf install mysql -y
 
-     [ $? -ne 0 ]; then
+    if [ $? -ne 0 ]; then
     echo "installing MSQL .... FAILED"
     exit 1
 
 else 
     echo " installing MYSQL.... Sucesses
 
-    if
 
     echo "installing nodejs"
     dnf install nodejs -y
 
-     [ $? -ne 0 ]; then
+    if [ $? -ne 0 ]; then
     echo "installing NODEJS  .... FAILED"
     exit 1
 
