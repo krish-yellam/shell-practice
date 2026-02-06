@@ -27,7 +27,7 @@ fi
     exit 1
 
 else 
-    echo " installing MYSQL.... Sucesses"
+    echo "installing MYSQL.... Sucesses"
 
 
     echo "installing nodejs"
@@ -39,3 +39,5 @@ else
 
 else 
     echo "installing NODEJs.... Sucesses"
+
+    fi
