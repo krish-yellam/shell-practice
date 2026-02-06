@@ -29,6 +29,8 @@ fi
 else 
     echo "installing MYSQL.... Sucesses"
 
+    fi
+
 
     echo "installing nodejs"
     dnf install nodejs -y
