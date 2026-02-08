@@ -27,9 +27,7 @@ do
 
 if [ $? -eq 0 ]; then 
     echo "skipping.. already installed"
-else
-    echo "installing..."
-
+    exit 1
 fi 
 
     dnf install $package -y &>>$LOG_FILES
