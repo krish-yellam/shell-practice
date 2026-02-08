@@ -1,6 +1,8 @@
 #!/bin/bash
 
-set -e 
+set -e #ERR
+
+trap 'echo ""there is an error om $LINEN, Command: $BASH_COMMAND"' ERR
 
 echo "Hello world"
 echo "I am learning Shell"
