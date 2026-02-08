@@ -23,6 +23,15 @@ fi
 for package in $@
 
 do 
+    dnf list installed $package 
+
+if [ $? -eq 0 ]; then 
+    echo "skipping.. already installed"
+else
+    echo "installing..."
+
+fi 
+
     dnf install $package -y &>>$LOG_FILES
     VALIDATE $? "$package installaion"
 done
