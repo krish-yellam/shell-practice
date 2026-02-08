@@ -32,7 +32,7 @@ if [ $? -eq 0 ]; then
     continue 
 else
     echo "installing $package now please wait..."
-fi  
+fi      
 
     dnf install $package -y $>>$LOG_FILES
    #VALIDATE $? "$package installaion"
