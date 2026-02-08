@@ -16,13 +16,13 @@ if [ $1 -ne 0 ] then
     echo " $2 ..... FAILURE" | tee $LOG_FILES
     exit 1
 else 
-    echo "$2 ......SUCCESS" | tee $LOGS_FILES
+    echo "$2 ......SUCCESS" | tee $LOG_FILES
 fi
 }
 
 for package in $@
 
 do 
-    dnf install $package -y
+    dnf install $package -y &>>$LOG_FILES
     VALIDATE $? "$package installaion"
 done
