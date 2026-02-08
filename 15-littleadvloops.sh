@@ -23,7 +23,7 @@ fi
 for package in $@
 
 do 
-    dnf list installed $package | tee $LOG_FILES
+    dnf list installed $package $>>$LOG_FILES
 
 if [ $? -eq 0 ]; then 
     echo "$package skipping.. already installed"
@@ -32,6 +32,6 @@ else
     echo "installing $package now please wait..."
 fi 
 
-    dnf install $package -y | tee $LOG_FILES
+    dnf install $package -y $>>$LOG_FILES
     VALIDATE $? "$package installaion"
 done
