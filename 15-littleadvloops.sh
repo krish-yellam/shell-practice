@@ -26,10 +26,10 @@ do
     dnf list installed $package &>>$LOG_FILES 
 
 if [ $? -eq 0 ]; then 
-    echo "skipping.. already installed"
+    echo "$package skipping.. already installed"
     continue 
 else
-    echo "installing now please wait..."
+    echo "installing $package now please wait..."
 fi 
 
     dnf install $package -y &>>$LOG_FILES
