@@ -28,6 +28,8 @@ do
 if [ $? -eq 0 ]; then 
     echo "skipping.. already installed"
     exit 1
+else
+    echo "installing now please wait..."
 fi 
 
     dnf install $package -y &>>$LOG_FILES
