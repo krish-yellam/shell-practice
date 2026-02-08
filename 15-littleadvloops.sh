@@ -27,7 +27,7 @@ do
 
 if [ $? -eq 0 ]; then 
     echo "skipping.. already installed"
-    exit 1
+    continue 
 else
     echo "installing now please wait..."
 fi 
