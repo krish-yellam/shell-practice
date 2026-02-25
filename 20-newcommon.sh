@@ -4,6 +4,6 @@ COUNTRY="usa"
 
 echo "I am in $COUNTRY"
 
-echo "PID of 20 is $$"
+echo "PID of 20-newcommon is $$"
 
 
