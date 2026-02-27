@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COUNTRY="usa"
+#COUNTRY=
 
 echo "I am in $COUNTRY"
 
