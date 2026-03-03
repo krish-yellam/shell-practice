@@ -15,4 +15,6 @@ while IFS= read -r filepath
     do
         # Process the current line (stored in the variable $LINE)
         echo "Deleteing the $filepath"
+        rm -f $filepath
+        echo "Deleted the $filepath"
     done <<< $FILES_TO_DEL
