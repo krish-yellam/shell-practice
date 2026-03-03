@@ -2,9 +2,16 @@
 
 count=1
 
-while [ $count -le 5 ]
-    do 
-        echo "count is $count"
-        sleep 1
-        ((count++))
-    done
+# while [ $count -le 5 ]
+#     do 
+#         echo "count is $count"
+#         sleep 1
+#         ((count++))
+#     done
+
+
+while IFS= read -r LINE
+do
+  # Process the current line (stored in the variable $LINE)
+  echo "Line content: $LINE"
+done < . 20-newcommon.sh
