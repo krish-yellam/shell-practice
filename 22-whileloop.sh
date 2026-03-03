@@ -5,5 +5,5 @@ count=1
 while [ $count -lt 5 ]; then
     do 
         echo "count is $count"
+        sleep 1
     done
-    
