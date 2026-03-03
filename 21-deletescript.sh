@@ -9,10 +9,10 @@ if [ ! -d $LOGS_DIR ]; then
 fi
 
 FILES_TO_DEL=$(find $LOGS_DIR -name "*.log" -type f -mtime +14) 
-    echo "$FILES_TO_DEL"
+    # echo "$FILES_TO_DEL"
 
 while IFS= read -r filepath
     do
         # Process the current line (stored in the variable $LINE)
-        echo "$filepath"
+        echo "Deleteing the $filepath"
     done <<< $FILES_TO_DEL
