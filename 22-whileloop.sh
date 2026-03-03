@@ -14,4 +14,4 @@ while IFS= read -r LINE
 do
   # Process the current line (stored in the variable $LINE)
   echo "Line content: $LINE"
-done < . 20-newcommon.sh
+done <  20-newcommon.sh
