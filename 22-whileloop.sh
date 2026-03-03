@@ -13,5 +13,5 @@ count=1
 while IFS= read -r LINE
 do
   # Process the current line (stored in the variable $LINE)
-  echo "Line content: $LINE"
+  echo "$LINE"
 done <  20-newcommon.sh
