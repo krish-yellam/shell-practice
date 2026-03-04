@@ -13,6 +13,6 @@ FILES_TO_DEL=$(find $LOGS_DIR -name "*.logs" -type f -mtime +14)
 
 while IFS= read -r filepath
 do 
-     echo "files to delete $FILES_TO_DEL"
+     echo "Files to delete: $filepath"
      
 done <<< $FILES_TO_DEL
