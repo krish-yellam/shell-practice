@@ -1,0 +1,54 @@
+#!/bin/bash
+
+
+USERID=$(id -u)
+LOGS_FOLDER="/var/log/shell-roboshop"
+LOGS_FILE="$LOGS_FOLDER/backup.log"
+SCRIPTDIR=$PWD
+SOURCE_DIR=$1
+DEST_DIR=$2
+DAYS=${3:-14} # 14 Days is the default
+
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+if [ $USERID -ne 0 ]; then
+    echo "Please run this script with root" 
+    exit 1
+fi
+
+mkdir -p $LOGS_FOLDER
+
+USAGE(){
+echo -e "$R sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14 days] $N"
+    
+}
+
+if [ $# lt 2 ]; then
+    USAGE
+fi
+
+logs(){
+    echo "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee $LOGS_FILE
+}
+    
+
+if [ ! -d $SOURCE_DIR ]; then
+    echo "Source directory: $SOURCE_DIR doesnot exist"
+    exit 1
+fi
+
+if [ ! -d $DEST_DIR ]; then
+    echo "Destination directory: $DEST_DIR doesnot exist"
+    exit 1
+fi
+
+
+FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
+
+logs "Backup started"
+logs "Source directory: $SOURCE_DIR"
+logs "Destination directory: $DEST_DIR"
+logs "Number of Days: $DAYS"
