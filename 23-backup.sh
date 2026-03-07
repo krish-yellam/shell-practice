@@ -52,3 +52,8 @@ logs "Backup started"
 logs "Source directory: $SOURCE_DIR"
 logs "Destination directory: $DEST_DIR"
 logs "Number of Days: $DAYS"
+
+if [ -z $FILES ]; then
+    logs "No files to archieve"
+fi
+ 
