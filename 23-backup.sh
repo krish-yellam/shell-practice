@@ -61,4 +61,20 @@ else
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE_NAME=$DEST_DIR/app-logs-$TIMESTAMP.zip
     echo "Archieve name $ZIP_FILE_NAME  $Y skipping $N"
+    find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS) | tar -zcvf $ZIP_FILE_NAME
+    
+        if [ -f $ZIP_FILE_NAME ]; then
+            logs "Archieved  $G success $N"
+           
+            while IFS= read -r filepath
+            do 
+                echo "Files to delete: $filepath"
+                rm -r $filepath
+                echo "Deleted files was: $filepath"
+
+            done <<< $FILES
+        else
+            logs "Archieved $R Failure $N"
+            exit 1
+        fi
 fi
