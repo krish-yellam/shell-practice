@@ -55,5 +55,10 @@ logs "Number of Days: $DAYS"
 
 if [ -z $FILES ]; then
     logs "No files to archieve"
+else 
+    # app-logs -$timestamp.zip
+    logs "files found to archieve: $FILES"
+    TIMESTAMP=$(date +%F-%H-%M-%S)
+    ZIP_FILE_NAME=$DEST_DIR/app-logs-$TIMESTAMP.zip
+
 fi
- 
