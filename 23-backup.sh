@@ -26,7 +26,7 @@ echo -e "$R sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14 days] $N"
     
 }
 
-if [ $# lt 2 ]; then
+if [ $# -lt 2 ]; then
     USAGE
 fi
 
