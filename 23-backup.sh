@@ -2,7 +2,7 @@
 
 
 USERID=$(id -u)
-LOGS_FOLDER="/var/log/shell-roboshop"
+LOGS_FOLDER="/var/log/shell-script"
 LOGS_FILE="$LOGS_FOLDER/backup.log"
 SCRIPTDIR=$PWD
 SOURCE_DIR=$1
@@ -29,7 +29,7 @@ echo -e "$R sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14 days] $N"
 if [ $# -lt 2 ]; then
     USAGE
 fi
-
+ 
 logs(){
     echo "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee $LOGS_FILE
 }
@@ -60,5 +60,5 @@ else
     logs "files found to archieve: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE_NAME=$DEST_DIR/app-logs-$TIMESTAMP.zip
-
+    echo "Archieve"
 fi
