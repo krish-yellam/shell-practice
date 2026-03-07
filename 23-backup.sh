@@ -60,11 +60,11 @@ else
     logs "files found to archieve: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE_NAME=$DEST_DIR/app-logs-$TIMESTAMP.zip
-    echo "Archieve name $ZIP_FILE_NAME  $Y skipping $N"
+    echo -e "Archieve name $ZIP_FILE_NAME  $Y skipping $N"
     tar -zcvf $ZIP_FILE_NAME $FILES  
     
         if [ -f $ZIP_FILE_NAME ]; then
-            logs "Archieved  $G success $N"
+            logs -e "Archieved  $G success $N"
            
             while IFS= read -r filepath
             do 
@@ -74,7 +74,7 @@ else
 
             done <<< $FILES
         else
-            logs "Archieved $R Failure $N"
+            logs -e "Archieved $R Failure $N"
             exit 1
         fi
 fi
