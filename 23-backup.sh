@@ -23,7 +23,7 @@ mkdir -p $LOGS_FOLDER
 
 USAGE(){
 echo -e "$R sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14 days] $N"
-    
+ 
 }
 
 if [ $# -lt 2 ]; then
@@ -60,5 +60,5 @@ else
     logs "files found to archieve: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE_NAME=$DEST_DIR/app-logs-$TIMESTAMP.zip
-    echo "Archieve"
+    echo "Archieve name $ZIP_FILE_NAME  $Y skipping $N"
 fi
